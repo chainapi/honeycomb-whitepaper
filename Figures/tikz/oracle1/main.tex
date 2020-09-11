@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+ 
+\begin{document}	
+\begin{tikzpicture}
+
+\draw[ultra thick, dashed] (4,-2.25) -- (4,2.25);
+\node at (3.7,2) {\bfseries BLOCKCHAIN \hspace{0.2cm} INTERNET};
+
+\node[draw, blue, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered] at (0.1,-0.1) (csc) {};
+\node[draw, blue, fill=white, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered] at (0,0) {\bfseries Consumer Smart Contract};
+
+\node[circle, fill=blue, very thick, rounded corners, text width=1.5cm, align=center, text=white] at (4,0) {\bfseries Trusted Oracle};
+\node[circle, draw, blue, ultra thick, rounded corners, text width=1.65cm, align=center, text=white] (to) at (4,0) {\bfseries Trusted Oracle};
+
+\node[inner sep=0pt, circle, draw, blue, ultra thick, rounded corners, text width=3cm, align=center, text=blue] (api) at (8,0) {\bfseries \LARGE API};
+
+\draw[<->, ultra thick, blue] ([xshift=0.25cm,yshift=0.1cm]csc.east) -- ([xshift=-0.25cm]to.west);
+
+\draw[<->, ultra thick, blue] ([xshift=0.125cm]to.east) -- ([xshift=-0.125cm]api.west);
+
+\end{tikzpicture}
+\end{document}

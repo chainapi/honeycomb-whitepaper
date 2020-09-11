@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes.geometric}
+ 
+\begin{document}	
+\begin{tikzpicture}
+
+\draw[ultra thick, dashed] (4,-2.25) -- (4,2.25);
+\node at (3.7,2) {\bfseries BLOCKCHAIN \hspace{0.2cm} INTERNET};
+
+\node[draw, blue, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered] (csc) at (-1.9,-0.1) {};
+\node[draw, blue, fill=white, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered] at (-2,0) {\bfseries Consumer Smart Contract};
+
+\node[draw, blue, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered] (clsc1) at (1.6,-0.1) {};
+\node[draw, blue, fill=blue, very thick, rounded corners, text width=2cm, minimum height=3cm, text centered, text=white] (clsc2) at (1.5,0) {\bfseries Chainlink Smart Contract};
+
+\node[rotate=30, draw, regular polygon, regular polygon sides=6, blue, line width=3pt, text width=0.3cm] (h1) at (4,-1.25) {};
+\node[rotate=30, draw, regular polygon, regular polygon sides=6, blue, line width=3pt, text width=0.3cm] (h2) at (4, 0) {};
+\node[rotate=30, draw, regular polygon, regular polygon sides=6, blue, line width=3pt, text width=0.3cm] (h3) at (4, 1.25) {};
+
+\node[blue] at (4, -2) {\bfseries Chainlink nodes};
+
+\node[inner sep=0pt, circle, draw, blue, ultra thick, rounded corners, text width=3cm, align=center, text=blue] (api) at (6.5,0) {\bfseries \LARGE API};
+
+
+\draw[ultra thick, blue, <->] ([xshift=0.15cm,yshift=0.1cm]csc.east) -- ([xshift=-0.15cm]clsc2.west);
+
+\draw[ultra thick, blue] ([yshift=-0.4cm]clsc1.east) -- (h1);
+\draw[ultra thick, blue] ([yshift=0.1cm]clsc1.east) -- (h2);
+\draw[ultra thick, blue] ([yshift=0.6cm]clsc1.east) -- (h3);
+
+\draw[ultra thick, blue] (h1) -- (api);
+\draw[ultra thick, blue] (h2) -- (api);
+\draw[ultra thick, blue] (h3) -- (api);
+
+
+\end{tikzpicture}
+\end{document}
